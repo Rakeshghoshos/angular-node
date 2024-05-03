@@ -1,0 +1,107 @@
+
+/* Navbar styling */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between main links and auth links */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links > ul,
+.nav-links > div > ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  background-color: #555;
+}
+
+/* Checkbox and label for toggle */
+.nav-toggle {
+  display: none; /* Hide checkbox */
+}
+
+.nav-toggle-label {
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.nav-toggle-label span {
+  top: 50%;
+}
+
+.nav-toggle-label span::before {
+  content: '';
+  top: -10px;
+}
+
+.nav-toggle-label span::after {
+  content: '';
+  top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: block; /* Show hamburger icon */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+  }
+
+  .nav-links ul li {
+    text-align: center;
+  }
+
+  #nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex;
+  }
+}
